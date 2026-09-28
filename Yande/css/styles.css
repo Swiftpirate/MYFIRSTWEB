@@ -1,0 +1,389 @@
+/* =========================================================
+   Yande Sichula — Web Technologies Page
+   Frontier / Old-West theme
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Crimson+Text:wght@400;600;700&display=swap');
+
+:root {
+    --leather-black: #1a120b;
+    --wood-dark: #3a2417;
+    --wood-mid: #5c3a24;
+    --parchment: #ecdcb6;
+    --parchment-light: #f6ead0;
+    --rust: #ad4327;
+    --rust-dark: #7f2f1a;
+    --gold: #c89b3c;
+    --ink: #2a1c10;
+
+    --font-display: 'Rye', serif;
+    --font-body: 'Crimson Text', Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--parchment-light);
+    background-color: var(--leather-black);
+    background-image:
+        radial-gradient(ellipse at top, rgba(200, 155, 60, 0.12), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.6), transparent 60%),
+        repeating-linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0.015) 0px,
+            rgba(255, 255, 255, 0.015) 2px,
+            transparent 2px,
+            transparent 6px
+        ),
+        linear-gradient(180deg, #241609 0%, #1a120b 45%, #120c07 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* subtle grain overlay for texture, no motion */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
+.page-content {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    text-align: center;
+    padding: 64px 20px 40px;
+    border-bottom: 3px double var(--gold);
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--parchment-light);
+    letter-spacing: 1px;
+    margin: 0 0 12px;
+    text-shadow: 0 2px 0 var(--rust-dark), 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+header h2 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin: 0;
+}
+
+/* ---------- NAV ---------- */
+
+nav {
+    margin: 30px 0 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    display: inline-block;
+    padding: 10px 18px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    color: var(--parchment-light);
+    text-decoration: none;
+    background: linear-gradient(180deg, var(--wood-mid), var(--wood-dark));
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus-visible {
+    background: linear-gradient(180deg, var(--rust), var(--rust-dark));
+    color: var(--parchment-light);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* ---------- SECTIONS (wanted-poster panels) ---------- */
+
+.content-section {
+    background: linear-gradient(180deg, var(--parchment-light), var(--parchment));
+    color: var(--ink);
+    border: 1px solid var(--wood-dark);
+    border-radius: 2px;
+    padding: 36px 40px;
+    margin-bottom: 34px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 6px var(--leather-black),
+        inset 0 0 0 8px var(--gold);
+}
+
+.content-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    color: var(--rust-dark);
+    margin-top: 0;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--rust);
+    padding-bottom: 10px;
+}
+
+.content-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--wood-dark);
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+
+.content-section p,
+.content-section li {
+    color: var(--ink);
+}
+
+.content-section ul,
+.content-section ol {
+    padding-left: 24px;
+}
+
+/* ---------- TABLE ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 1rem;
+}
+
+caption {
+    font-family: var(--font-display);
+    color: var(--rust-dark);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid var(--wood-mid);
+    padding: 10px 12px;
+    text-align: left;
+}
+
+thead th {
+    background: var(--wood-dark);
+    color: var(--parchment-light);
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(173, 67, 39, 0.08);
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery figure {
+    flex: 1 1 220px;
+    margin: 0;
+    background: var(--parchment-light);
+    border: 6px solid var(--parchment-light);
+    outline: 2px solid var(--wood-dark);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: sepia(0.35) contrast(1.05);
+}
+
+.gallery figcaption {
+    padding: 8px 4px 4px;
+    font-style: italic;
+    text-align: center;
+    color: var(--wood-dark);
+    font-size: 0.95rem;
+}
+
+.credit-note {
+    font-size: 0.85rem;
+    color: var(--wood-mid);
+    margin-top: 16px;
+}
+
+/* ---------- MEDIA ---------- */
+
+video {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 12px auto;
+    border: 6px solid var(--wood-dark);
+    outline: 2px solid var(--gold);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+audio {
+    width: 100%;
+    max-width: 500px;
+    height: 54px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 30px;
+    outline: none;
+    background-color: var(--wood-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.video-caption {
+    text-align: center;
+    font-style: italic;
+    color: var(--wood-mid);
+    max-width: 500px;
+    margin: 6px auto 0;
+}
+
+/* ---------- FORM ---------- */
+
+.form-note {
+    font-size: 0.9rem;
+    color: var(--wood-mid);
+    font-style: italic;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--wood-dark);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--parchment-light);
+    border: 1px solid var(--wood-mid);
+    border-radius: 2px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--rust);
+    outline-offset: 1px;
+}
+
+button[type="submit"] {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    color: var(--parchment-light);
+    background: linear-gradient(180deg, var(--rust), var(--rust-dark));
+    border: 1px solid var(--gold);
+    padding: 12px 28px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    text-align: center;
+    padding: 30px 20px 10px;
+    border-top: 3px double var(--gold);
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 600px) {
+    .content-section {
+        padding: 24px 20px;
+    }
+
+    header {
+        padding: 48px 16px 30px;
+    }
+
+    .nav-links li a {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
