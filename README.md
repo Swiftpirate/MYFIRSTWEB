@@ -5,8 +5,8 @@ Engineering and Technology). I am a Data Science student, and this site is an im
 Activity 2 page. It keeps my About Me, hobbies, learning plan, photos, video and audio, and adds a
 Projects & Skills section, a responsive frontier-themed design and four JavaScript features.
 
-- **Live site (Render):** _add the onrender.com link here after deploying_
-- **Source code:** _add the GitHub repository link here_
+- **Live site (Render):** https://myfirstweb-lq9a.onrender.com
+- **Source code:** https://github.com/Swiftpirate/MYFIRSTWEB
 
 Built with plain **HTML5, CSS and JavaScript**. There are no frameworks and no build step.
 
