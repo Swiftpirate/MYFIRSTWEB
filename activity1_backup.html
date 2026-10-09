@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 200vh;
+            /* extra height so there's room to scroll */
+            position: relative;
+        }
+
+        /* Animated tech background canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            display: block;
+        }
+
+        .page-content {
+            position: relative;
+            z-index: 1;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            padding: 32px 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 4px;
+        }
+
+        h2 {
+            color: var(--muted);
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 16px;
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        ul {
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 16px 16px 16px 36px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 24px;
+            background-color: #000;
+        }
+
+        .video-caption {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated tech background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="page-content">
+        <div class="container">
+            <h1>Welcome to the World of Web Programming</h1>
+            <h2>Musenga Hope Sichula &mdash; 202511308</h2>
+
+            <p>Hello World! This is my first HTML document.</p>
+            <p>I am currently learning Introduction to Web Technologies.</p>
+
+            <p><strong>The following are my hobbies:</strong></p>
+            <ul>
+                <li>Running</li>
+                <li>Gaming</li>
+                <li>Coding</li>
+            </ul>
+
+            <!-- Video section: replace the file names below with your own video -->
+            <!-- Multiple <source> tags let different browsers pick the format they support -->
+            <video controls width="320" height="240">
+                <source src="me.mp4" type="video/mp4">
+   
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-caption">A short video about me.</p>
+        </div>
+    </div>
+
+    <script>
+        // Animated tech-style particle network background.
+        // Particles drift on their own, and the whole field shifts
+        // vertically as the page is scrolled (parallax effect).
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        const PARTICLE_COUNT = 70;
+        const LINK_DISTANCE = 130;
+        let scrollOffset = 0;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Slow vertical drift tied to scroll position (parallax feel)
+            const parallaxShift = scrollOffset * 0.15;
+
+            // Update and draw particles
+            for (let p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // wrap around edges
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
+                const drawY = (p.y + parallaxShift) % height;
+
+                ctx.beginPath();
+                ctx.arc(p.x, drawY, 2, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.8)'; // accent color
+                ctx.fill();
+            }
+
+            // Draw connecting lines between nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const a = particles[i];
+                    const b = particles[j];
+                    const ay = (a.y + parallaxShift) % height;
+                    const by = (b.y + parallaxShift) % height;
+
+                    const dx = a.x - b.x;
+                    const dy = ay - by;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < LINK_DISTANCE) {
+                        const opacity = 1 - dist / LINK_DISTANCE;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, ay);
+                        ctx.lineTo(b.x, by);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${opacity * 0.3})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            createParticles();
+        });
+
+        window.addEventListener('scroll', () => {
+            scrollOffset = window.scrollY;
+        });
+
+        resizeCanvas();
+        createParticles();
+        draw();
+    </script>
+
+</body>
+
+</html>

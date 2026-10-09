@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Yande Sichula, a Data Science student at Mulungushi University, built for ICT251 Web Technologies.">
+    <title>Yande Sichula — My Web Technologies Page</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%233a2417'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23e3c27a'%3EYS%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Source+Sans+3:wght@400;600;700&family=Zilla+Slab:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="#home">Yande Sichula</a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#plan">Learning Plan</a></li>
+                    <li><a href="#photos">Photos</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- INTRODUCTION -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="wrap hero-inner">
+                <div class="hero-text">
+                    <p class="eyebrow">Welcome to the World of Web Programming</p>
+                    <h1 id="hero-title">Yande Sichula</h1>
+                    <p class="hero-programme">Data Science student &middot; Mulungushi University</p>
+                    <p class="hero-meta">School of Engineering and Technology &middot; Student No. 202501555</p>
+                    <p class="hero-intro">
+                        I am learning to structure, style and bring web pages to life in ICT251 Web
+                        Technologies. This site brings together what I have learned so far, and it grows
+                        with every activity.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">View My Projects</a>
+                        <a class="btn btn-ghost" href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-portrait">
+                    <img src="images/photo3.jpg" width="810" height="1080" alt="Portrait of Yande Sichula smiling in front of a textured wall">
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="section">
+            <div class="wrap">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <p class="about-text">
+                        My name is Yande Sichula, and I am a Data Science student at Mulungushi
+                        University in the School of Engineering and Technology. I am currently taking
+                        ICT251 Web Technologies, which is teaching me how to structure, style and bring
+                        web pages to life using HTML, CSS and JavaScript. Outside of web development, my
+                        coursework also covers data structures, Java programming and statistics, all of
+                        which feed into my long-term goal of building data-driven applications. I enjoy
+                        the problem-solving side of programming, and building this personal website has
+                        been a practical way to see how the building blocks of the web fit together,
+                        from semantic markup to responsive design.
+                    </p>
+                    <aside class="card facts" aria-labelledby="facts-title">
+                        <h3 id="facts-title">Quick Facts</h3>
+                        <dl>
+                            <div>
+                                <dt>Programme</dt>
+                                <dd>Data Science</dd>
+                            </div>
+                            <div>
+                                <dt>School</dt>
+                                <dd>Engineering and Technology</dd>
+                            </div>
+                            <div>
+                                <dt>University</dt>
+                                <dd>Mulungushi University</dd>
+                            </div>
+                            <div>
+                                <dt>Current course</dt>
+                                <dd>ICT251 Web Technologies</dd>
+                            </div>
+                            <div>
+                                <dt>Goal</dt>
+                                <dd>Building data-driven applications</dd>
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS & SKILLS -->
+        <section id="projects" class="section section-alt">
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>Projects &amp; Skills</h2>
+                    <p class="section-lead">
+                        Four things I have learned so far. Open a card to see what each skill involves
+                        and where I have used it.
+                    </p>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="card project-card">
+                        <span class="tag">Web &middot; ICT251</span>
+                        <h3>Semantic HTML5</h3>
+                        <p>Structuring pages so that people, browsers and screen readers can all follow them.</p>
+                        <button class="btn btn-outline details-toggle" type="button" aria-expanded="false" aria-controls="details-html" hidden>
+                            <span class="chevron" aria-hidden="true">&#9656;</span>
+                            <span class="toggle-label">Show details</span>
+                            <span class="visually-hidden">about Semantic HTML5</span>
+                        </button>
+                        <div class="project-details" id="details-html">
+                            <h4>What I learned</h4>
+                            <ul>
+                                <li>Using header, nav, main, section and footer to give a page a clear outline with a single h1.</li>
+                                <li>Writing alt text and captions for images, and a caption and header cells for tables.</li>
+                                <li>Labelling every form control so it is clear what each field is for.</li>
+                            </ul>
+                            <p class="used-in"><strong>Used in:</strong> this website, from Activity 1 to Activity 3.</p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <span class="tag">Web &middot; ICT251</span>
+                        <h3>Responsive CSS</h3>
+                        <p>Styling one page so that it is comfortable to read on a phone and on a laptop.</p>
+                        <button class="btn btn-outline details-toggle" type="button" aria-expanded="false" aria-controls="details-css" hidden>
+                            <span class="chevron" aria-hidden="true">&#9656;</span>
+                            <span class="toggle-label">Show details</span>
+                            <span class="visually-hidden">about Responsive CSS</span>
+                        </button>
+                        <div class="project-details" id="details-css">
+                            <h4>What I learned</h4>
+                            <ul>
+                                <li>Keeping all styles in one external stylesheet that uses element, class and id selectors.</li>
+                                <li>Using the box model (padding, borders and margins) to space content consistently.</li>
+                                <li>Using Flexbox, Grid and media queries so the layout adapts to narrow screens.</li>
+                            </ul>
+                            <p class="used-in"><strong>Used in:</strong> the layout, gallery, table and forms on this page.</p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <span class="tag">Web &middot; ICT251</span>
+                        <h3>JavaScript and the DOM</h3>
+                        <p>Making a page respond to what a visitor clicks and types.</p>
+                        <button class="btn btn-outline details-toggle" type="button" aria-expanded="false" aria-controls="details-js" hidden>
+                            <span class="chevron" aria-hidden="true">&#9656;</span>
+                            <span class="toggle-label">Show details</span>
+                            <span class="visually-hidden">about JavaScript and the DOM</span>
+                        </button>
+                        <div class="project-details" id="details-js">
+                            <h4>What I learned</h4>
+                            <ul>
+                                <li>Listening for events such as button clicks and form submissions.</li>
+                                <li>Checking user input and showing clear feedback without reloading the page.</li>
+                                <li>Using functions, variables and arrays to update the page with textContent.</li>
+                            </ul>
+                            <p class="used-in"><strong>Used in:</strong> the contact form, these project cards, the photo viewer and the study calculator.</p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <span class="tag">Programming</span>
+                        <h3>Java and Data Structures</h3>
+                        <p>The programming foundations behind the data-driven applications I want to build.</p>
+                        <button class="btn btn-outline details-toggle" type="button" aria-expanded="false" aria-controls="details-java" hidden>
+                            <span class="chevron" aria-hidden="true">&#9656;</span>
+                            <span class="toggle-label">Show details</span>
+                            <span class="visually-hidden">about Java and Data Structures</span>
+                        </button>
+                        <div class="project-details" id="details-java">
+                            <h4>What I learned</h4>
+                            <ul>
+                                <li>Writing Java programs with classes, methods, loops and conditions.</li>
+                                <li>Storing and organising data with arrays, lists, stacks and queues.</li>
+                                <li>Choosing a structure based on how the data will be searched, added to or removed.</li>
+                            </ul>
+                            <p class="used-in"><strong>Used in:</strong> my Java programming and data structures coursework.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="section">
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>My Hobbies</h2>
+                    <p class="section-lead">What I enjoy doing outside of lectures.</p>
+                </div>
+                <ul class="hobby-list">
+                    <li class="card hobby">
+                        <span class="hobby-icon" aria-hidden="true">🏃</span>
+                        <span class="hobby-name">Running</span>
+                    </li>
+                    <li class="card hobby">
+                        <span class="hobby-icon" aria-hidden="true">🎮</span>
+                        <span class="hobby-name">Gaming</span>
+                    </li>
+                    <li class="card hobby">
+                        <span class="hobby-icon" aria-hidden="true">💻</span>
+                        <span class="hobby-name">Coding</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- LEARNING PLAN -->
+        <section id="plan" class="section section-alt">
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>My Learning Plan</h2>
+                    <p class="section-lead">How I plan to keep improving my web skills, week by week.</p>
+                </div>
+
+                <div class="plan-grid">
+                    <div class="card">
+                        <h3>Steps I Will Take to Improve My Web Skills</h3>
+                        <ol class="steps">
+                            <li>Complete a structured HTML and CSS course and rebuild this page from scratch without notes.</li>
+                            <li>Practice JavaScript fundamentals by building small interactive projects such as a to-do list and a quiz app.</li>
+                            <li>Study responsive design principles and rework my projects to work well on mobile screen sizes.</li>
+                        </ol>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <caption>Weekly Web Learning Plan</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Day</th>
+                                    <th scope="col">Topic</th>
+                                    <th scope="col">Practice Task</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>Semantic HTML</td>
+                                    <td>Rebuild this page's structure using header, nav, main and footer only.</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday</td>
+                                    <td>CSS Layout (Flexbox)</td>
+                                    <td>Arrange the photo gallery into a responsive row of cards.</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>Forms &amp; Validation</td>
+                                    <td>Add custom validation messages to the contact form fields.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Study hours calculator (JavaScript feature) -->
+                <div class="card calculator">
+                    <div class="calc-intro">
+                        <h3>Study Hours Calculator</h3>
+                        <p>
+                            Plan your week: enter the hours you will study each day and how many days a
+                            week you will study, then press <strong>Calculate</strong>.
+                        </p>
+                    </div>
+
+                    <form id="study-form" class="calc-form" novalidate>
+                        <div class="calc-fields">
+                            <div class="field">
+                                <label for="study-hours">Hours per day</label>
+                                <input type="text" id="study-hours" name="hours" inputmode="decimal" autocomplete="off" placeholder="e.g. 1.5" aria-describedby="study-hours-hint study-hours-error" required>
+                                <span class="hint" id="study-hours-hint">More than 0 and no more than 24.</span>
+                                <span class="error-message" id="study-hours-error"></span>
+                            </div>
+                            <div class="field">
+                                <label for="study-days">Days per week</label>
+                                <input type="text" id="study-days" name="days" inputmode="numeric" autocomplete="off" placeholder="e.g. 3" aria-describedby="study-days-hint study-days-error" required>
+                                <span class="hint" id="study-days-hint">A whole number from 1 to 7.</span>
+                                <span class="error-message" id="study-days-error"></span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                            <button type="reset" class="btn btn-outline">Clear</button>
+                        </div>
+                    </form>
+
+                    <div id="study-result" role="status">
+                        <p class="result-total" id="study-total">No total yet</p>
+                        <p class="result-detail" id="study-detail">Your weekly study hours will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTOS -->
+        <section id="photos" class="section">
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>My Photos</h2>
+                    <p class="section-lead">A few photos from my journey as a student.</p>
+                </div>
+
+                <div class="gallery" id="gallery">
+                    <figure>
+                        <img src="images/photo1.jpg" width="810" height="1080" alt="Selfie of Yande outdoors in a blue T-shirt and a dark utility vest, in front of a building with a window and a gated doorway">
+                        <figcaption>On campus at Mulungushi University.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/photo2.jpg" width="810" height="1080" alt="Smiling selfie of Yande indoors in a light-blue sweatshirt over a white collared shirt, against a cream wall">
+                        <figcaption>Best formal outfit.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/photo3.jpg" width="810" height="1080" alt="Yande smiling in a white Germany football jersey, standing against a textured grey wall">
+                        <figcaption>Future Data Scientist.</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Gallery viewer buttons (shown by JavaScript) -->
+                <div class="gallery-controls" id="gallery-controls" hidden>
+                    <button type="button" class="btn btn-outline" id="gallery-prev">
+                        <span aria-hidden="true">&larr;</span> Previous
+                    </button>
+                    <p id="gallery-status" aria-live="polite">Photo 1 of 3</p>
+                    <button type="button" class="btn btn-outline" id="gallery-next">
+                        Next <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </div>
+
+                <p class="credit-note">All photos above were taken by me.</p>
+            </div>
+        </section>
+
+        <!-- MEDIA -->
+        <section id="media" class="section section-alt">
+            <div class="wrap">
+                <div class="section-header">
+                    <h2>My Media</h2>
+                    <p class="section-lead">A short video and an audio clip. Nothing plays until you press play.</p>
+                </div>
+
+                <div class="media-grid">
+                    <article class="card media-card">
+                        <h3>Introduction Video</h3>
+                        <video controls preload="metadata" playsinline>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            <a href="videos/video1.mp4">Download the video</a> instead.
+                        </video>
+                        <p class="media-summary">
+                            <strong>Summary:</strong> a short video about me, in which I introduce myself
+                            and my studies in Data Science at Mulungushi University.
+                        </p>
+                    </article>
+
+                    <article class="card media-card">
+                        <h3>Audio Clip</h3>
+                        <audio controls preload="metadata">
+                            <source src="videos/voice.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                            <a href="videos/voice.mp3">Download the audio clip</a> instead.
+                        </audio>
+                        <p class="media-summary">
+                            <strong>Summary:</strong> a short audio clip about why I am studying web
+                            technologies and how it connects to my interest in Data Science.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="wrap contact-grid">
+                <div class="contact-intro">
+                    <h2>Contact</h2>
+                    <p>
+                        Have a question about my projects, or want to study together? Try the form.
+                        It checks your details in the browser and shows you a preview.
+                    </p>
+                    <p>The form checks that:</p>
+                    <ul class="contact-checks">
+                        <li>your name has at least 2 characters (spaces alone do not count);</li>
+                        <li>your email looks like <em>name@example.com</em>;</li>
+                        <li>your message has at least 10 characters.</li>
+                    </ul>
+                </div>
+
+                <div class="card form-card">
+                    <p class="demo-note" id="form-demo-note">Browser demonstration only &mdash; no message is sent.</p>
+
+                    <form id="contact-form" aria-describedby="form-demo-note" novalidate>
+                        <div class="field">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" autocomplete="name" aria-describedby="contact-name-error" required>
+                            <span class="error-message" id="contact-name-error"></span>
+                        </div>
+
+                        <div class="field">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" autocomplete="email" aria-describedby="contact-email-error" required>
+                            <span class="error-message" id="contact-email-error"></span>
+                        </div>
+
+                        <div class="field">
+                            <label for="contact-topic">Topic</label>
+                            <select id="contact-topic" name="topic">
+                                <option value="general">General Enquiry</option>
+                                <option value="project">Project Feedback</option>
+                                <option value="collaboration">Collaboration</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" maxlength="1000" aria-describedby="contact-message-error" required></textarea>
+                            <span class="error-message" id="contact-message-error"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Validate &amp; Preview</button>
+                            <button type="reset" class="btn btn-outline">Clear Form</button>
+                        </div>
+
+                        <p class="form-status" id="form-status" role="status"></p>
+                    </form>
+
+                    <!-- Preview shown by JavaScript after the form passes validation -->
+                    <div class="form-preview" id="form-preview" tabindex="-1" hidden>
+                        <h3>Validated &mdash; not sent</h3>
+                        <p>
+                            Your details passed validation in this browser. This is only a preview:
+                            nothing has been sent or saved.
+                        </p>
+                        <dl class="preview-list">
+                            <dt>Name</dt>
+                            <dd id="preview-name"></dd>
+                            <dt>Email</dt>
+                            <dd id="preview-email"></dd>
+                            <dt>Topic</dt>
+                            <dd id="preview-topic"></dd>
+                            <dt>Message</dt>
+                            <dd id="preview-message"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p>&copy; 2026 Yande Sichula &mdash; ICT251 Web Technologies, Mulungushi University.</p>
+            <ul class="footer-links">
+                <!-- Replace this address with the link to your GitHub repository -->
+                <li><a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY">View Source on GitHub</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener">MDN Web Docs (learn web dev)</a></li>
+                <li><a href="#home">Back to top</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
